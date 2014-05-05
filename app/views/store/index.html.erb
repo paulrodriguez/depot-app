@@ -4,7 +4,9 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-
+<% if session[:counter] > 5 %>
+<p> page visits <%= session[:counter] %> </p>
+<% end %>
 <h1>your pragmatic catalog</h1>
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
@@ -15,6 +17,7 @@
         <%= sanitize(product.description) %>
         <div class="price_line">
           <span class="price"><%= number_to_currency(product.price) %></span>
+	  <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
         </div>
       </div>
     <% end %>

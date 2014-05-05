@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .store {
+       
        h1 {
        margin: 0;
        padding-bottom: 0.5em;
@@ -38,10 +39,13 @@
        margin-top: 0.5em;
        margin-bottom: 0.8em;
        }
-
+       
        .price {
        color: #44a;
        font-weight: bold;
        margin-right: 3em;
+       }
+       form, form > div {
+       display: inline;
        }
 }
